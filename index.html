@@ -53,7 +53,7 @@
 		<th>Email
 		</th>
 	</tr>
-	<tr ng-repeat="user in users">
+	<tr ng-repeat="user in users track by $index">
 		<td>{{user.Name}}
 		</td>
 		<td>{{user.Age}}

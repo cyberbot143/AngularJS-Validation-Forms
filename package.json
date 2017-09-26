@@ -1,0 +1,26 @@
+{
+  "name": "angularjsvalid",
+  "version": "1.0.0",
+  "description": "validation ",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "mongoose": "^4.11.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyberbot143/AngularJS-Validation-Forms.git"
+  },
+  "author": "sai krishna v",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyberbot143/AngularJS-Validation-Forms/issues"
+  },
+  "homepage": "https://github.com/cyberbot143/AngularJS-Validation-Forms#readme"
+}
