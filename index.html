@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    
+  </head>
+<body>
+<div ng-app="validationApp" ng-controller="mainController">
+<div class="container">
+<div class="row">  
+   
+<div class="col-sm-6">
+    <!-- FORM ============ -->
+  
+    <form name="userForm" ng-submit="submitForm()" novalidate>
+
+        <!-- AGE -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.age.$invalid && !userForm.age.$pristine }">
+            <label>Age</label>
+            <input type="number" name="age" class="form-control" ng-model="user.age"  min="1" max="100" required>
+            <p ng-show="userForm.age.$invalid && !userForm.age.$pristine" class="help-block">You must enter age between 1 and 100.</p>
+        </div>
+      
+        <!-- USERNAME -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="20" ng-pattern="/^[a-zA-Z0-9]*$/">
+            <p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
+            <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+          <p ng-show="userForm.username.$error.pattern" class="help-block">Special Characters are not allowed.</p>
+        </div>
+        
+        <!-- EMAIL -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email">
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+        
+    </form>
+  </div>
+
+<table class="table" class="col-md-6 .col-md-offset-3">
+	<tr>
+		<th>UserName
+		</th>
+		<th>Age
+		</th>
+		<th>Email
+		</th>
+	</tr>
+	<tr ng-repeat="user in users">
+		<td>{{user.Name}}
+		</td>
+		<td>{{user.Age}}
+		</td>
+		<td>{{user.Email}}
+		</td>
+	</tr>
+</table>
+<script src="app.js"></script>
+</body>
+
+</html>
+
+
