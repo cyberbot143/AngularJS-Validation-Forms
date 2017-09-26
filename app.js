@@ -13,7 +13,11 @@ var validationApp = angular.module('validationApp', []);
 			if ($scope.userForm.$valid) {
 
 				$scope.users.push({ 'Name':$scope.user.username, 'Age': $scope.user.age, 'Email':$scope.user.email });
-			    console.log($scope.users);
+
+				$scope.user.username = '';
+				$scope.user.age = '';
+				$scope.user.email = '';
+
 			     
 			}
 
