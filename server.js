@@ -3,9 +3,8 @@ var app = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/UserData"); //connection to mongodb
+mongoose.connect("mongodb://localhost:27017/UserData");
 var UserModel = require('./models/UserDataModel');
-
 
 app.use(express.static(__dirname + '/public')); //static page content
 app.use(bodyParser.urlencoded({

@@ -19,7 +19,7 @@ var validationApp = angular.module('validationApp', []);
 			}
 
 		};
-
+		
 		$timeout(callAtTimeOut, 1000);
 		function callAtTimeOut(){
 			$http.post("/get")
@@ -28,6 +28,7 @@ var validationApp = angular.module('validationApp', []);
 				$scope.users = response.data.docs;
 			});
 		}
+		
 		
 
 	});
